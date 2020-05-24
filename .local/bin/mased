@@ -1,0 +1,57 @@
+#!/bin/sh
+
+#srcdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+makefile="PROJECT=
+TYPE=
+
+CC=gcc
+CXX=g++
+RM=rm -f
+CPPFLAGS=-g -Wall -Wextra -Wshadow -pedantic -O3 -Wunreachable-code -Wmain #flags for C and C++
+LDFLAGS=-g -s
+LDLIBS= # insert here all libraries needed
+
+
+SRCS=\$(PROJECT).\$(TYPE)
+OBJS=\$(subst .\$(TYPE),.o,\$(SRCS))
+
+all : \$(PROJECT)
+
+\$(PROJECT): \$(OBJS)
+        \$(CXX) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
+	
+	\$(PROJECT).o: \$(PROJECT).\$(TYPE)
+	
+clean:
+        \$(RM) \$(OBJS)
+		
+disclean: clean
+        \$(RM) \$(PROJECT)"
+project=$1
+extension=$2
+path="."
+
+
+if [ "$project" = "" ] || [ "$extension" = "" ]
+then
+	echo "usage: $(basename $0) <name> <extension=c,cpp>" # [destionation=.]
+	exit 0
+fi
+
+#if [ "$3" != "" ] 
+#then
+#	path="$3"
+#fi
+
+echo "$makefile" > makefile.tmp
+
+sed "1s/$/$project/" makefile.tmp > "$path/Makefile"
+sed "2s/$/$extension/" "$path/Makefile" > "$path/Makefile1"
+
+# idk why I cannot use directly > "$path/Makefile", but this works
+
+mv "$path/Makefile1" "$path/Makefile"
+
+rm makefile.tmp
+
+echo "created Makefile for $project($extension) at $path"
