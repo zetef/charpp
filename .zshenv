@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# zsh profile file, runs on login, env vars in here
+
+# access to local bin files
+export PATH="$PATH:$(du $HOME/.local/bin | cut -f2 | paste -sd ':')"
+
+# default programs
+export EDITOR="vim"
+export TERMINAL="st"
+export BROWSER="brave"
+export READER="zathura"
+
+# using the XDG base directory spec
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export LESSHISTFILE="-"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# other env vars
+
+# change .zshrc location
+[ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
