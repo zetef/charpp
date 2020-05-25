@@ -107,3 +107,4 @@ HISTFILE=~/.cache/zsh/history
 alias charpp="git --git-dir=$HOME/.charpp/ --work-tree=$HOME"
 
 # aliases
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"

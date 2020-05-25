@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# basic verbosity
+alias \
+	cp="cp -iv"\
+	mv="mv -iv"\
+	rm="rm -vI"\
+	mkd="mkdir -pv"
+
+# basic colors when possible
+alias \
+	ls="ls -hN --color=auto --group-directories-first"\
+	grep="grep --color=auto"\
+	diff="diff --color=auto"
+
+# long commands -> shrt cmmds
+alias \
+	g="git"\
+	sdn="shutdown -h now"\
+	e="$EDITOR"\
+	v="$EDITOR"\
+	a="sudo apt"\
+	z="zathura"
