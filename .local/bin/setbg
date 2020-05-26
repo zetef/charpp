@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# may add new features soon
+#feh --bg-scale $HOME/.config/wall.png
+xwallpaper --zoom $HOME/.config/wall.png

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# this runs when a DM (gdm, xdm etc) logs you into a graphical session 
+
+# only fix i found such that i don't specify the path for setbg & others
+. ~/.zshenv
+
+# mostly daemons
+setbg &
+slstatus &
+
+exec dwm
