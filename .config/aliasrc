@@ -6,7 +6,7 @@ alias \
 	mv="mv -iv"\
 	rm="rm -vI"\
 	mkd="mkdir -pv"\
-	ps="ps -forest"
+	ps="ps --forest"
 
 # basic colors when possible
 alias \
@@ -22,3 +22,7 @@ alias \
 	v="$EDITOR"\
 	a="sudo apt"\
 	z="zathura"
+
+# change output if not possible by env
+alias \
+	wget="wget --hsts-file=$HOME/.cache/wget-hsts"
