@@ -21,6 +21,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export STACK_ROOT="$XDG_DATA_HOME/stack" # haskell stack
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+export GOPATH="$HOME/.local/go"
 
 # other env vars
 
