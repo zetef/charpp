@@ -14,7 +14,7 @@ alias \
 	grep="grep --color=auto"\
 	diff="diff --color=auto"
 
-# long commands -> shrt cmmds
+# long commands -> shrt cmds
 alias \
 	g="git"\
 	sdn="shutdown -h now"\
@@ -26,3 +26,7 @@ alias \
 # change output if not possible by env
 alias \
 	wget="wget --hsts-file=$HOME/.cache/wget-hsts"
+
+# change to other commands
+alias \
+	lf="lfcd"

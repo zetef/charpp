@@ -103,6 +103,12 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
+LFCD="$GOPATH/src/github.com/gokcehan/lf/etc/lfcd.sh"
+# source
+[ -f "$LFCD" ] && source "$LFCD"
+
+bindkey -s '^o' 'lfcd\n'
+
 # one alias to rule them all (genius: https://news.ycombinator.com/item?id=11071754)
 alias charpp="git --git-dir=$HOME/.charpp/ --work-tree=$HOME"
 

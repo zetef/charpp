@@ -24,6 +24,7 @@ export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export GOPATH="$HOME/.local/go"
 
 # other env vars
+export PATH="$PATH:$(du $GOPATH/bin | cut -f2 | paste -sd ':')" # bcs go that's why
 
 # change .zshrc location
 [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
