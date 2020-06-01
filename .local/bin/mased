@@ -18,15 +18,15 @@ OBJS=\$(subst .\$(TYPE),.o,\$(SRCS))
 all : \$(PROJECT)
 
 \$(PROJECT): \$(OBJS)
-        \$(CXX) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
+	\$(CXX) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
 	
-	\$(PROJECT).o: \$(PROJECT).\$(TYPE)
+\$(PROJECT).o: \$(PROJECT).\$(TYPE)
 	
 clean:
-        \$(RM) \$(OBJS)
+	\$(RM) \$(OBJS)
 		
 disclean: clean
-        \$(RM) \$(PROJECT)"
+	\$(RM) \$(PROJECT)"
 project=$1
 extension=$2
 path="."
