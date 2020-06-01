@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Brave Web Browser
+Exec=/opt/brave.com/brave/brave
+Icon=/opt/brave.com/brave/product_logo_256.png
+StartupNotify=true

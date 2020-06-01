@@ -12,4 +12,6 @@ image/png=img.desktop;
 image/jpeg=img.desktop;
 image/gif=img.desktop;
 video/x-matroska=video.desktop;
+x-scheme-handler/http=brave.desktop;
+x-scheme-handler/https=brave.desktop;
 # inode/directory=file.desktop
