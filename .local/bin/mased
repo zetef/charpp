@@ -30,7 +30,7 @@ clean:
 	\$(RM) \$(OBJS)
 
 distclean: clean
-	\$(RM) *~ .depend ./\$(PROJECT)
+	\$(RM) *~ .depend
 
 include .depend"
 project=$1
