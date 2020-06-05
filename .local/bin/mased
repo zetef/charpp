@@ -7,7 +7,7 @@ TYPE=
 CC=gcc
 CXX=g++
 RM=rm -f
-CPPFLAGS=-g -Wall -Wextra -Wshadow -pedantic -O3 -Wunreachable-code -Wmain #flags for C and C++
+CFLAGS=-g -Wall -Wextra -Wshadow -pedantic -O3 -Wunreachable-code -Wmain #flags for C and C++
 LDFLAGS=-g -s
 LDLIBS= # insert here all libraries needed
 
@@ -18,15 +18,21 @@ OBJS=\$(subst .\$(TYPE),.o,\$(SRCS))
 all : \$(PROJECT)
 
 \$(PROJECT): \$(OBJS)
-	\$(CXX) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
+	\$(CC) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
 	
-\$(PROJECT).o: \$(PROJECT).\$(TYPE)
-	
+depend: .depend
+
+.depend: \$(SRCS)
+	\$(RM) ./.depend
+	\$(CC) \$(CFLAGS) -MM $^>>./.depend;
+
 clean:
 	\$(RM) \$(OBJS)
-		
-disclean: clean
-	\$(RM) \$(PROJECT)"
+
+distclean: clean
+	\$(RM) *~ .depend
+
+include .depend"
 project=$1
 extension=$2
 path="."
