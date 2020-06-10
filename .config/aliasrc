@@ -21,11 +21,13 @@ alias \
 	e="$EDITOR"\
 	v="$EDITOR"\
 	a="sudo apt"\
-	z="zathura"
+	z="zathura"\
+	cpl="make distclean && make all && make clean"
 
 # change output if not possible by env
 alias \
-	wget="wget --hsts-file=$HOME/.cache/wget-hsts"
+	wget="wget --hsts-file=$HOME/.cache/wget-hsts"\
+	dosbox="dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf"
 
 # change to other commands
 alias \

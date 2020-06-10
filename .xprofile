@@ -6,8 +6,11 @@
 . ~/.zshenv
 
 # mostly daemons
-setbg &
+# mpd &
+transmission-gtk -m & 	# for torrents
+setbg &			# set the background
+dunst &			# for notifications
 # xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/Xresources &
-slstatus &
+slstatus &		# status bar
 
 exec dwm

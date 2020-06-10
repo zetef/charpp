@@ -20,19 +20,19 @@ all : \$(PROJECT)
 \$(PROJECT): \$(OBJS)
 	\$(CC) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
 	
-depend: .depend
+depend: .d
 
-.depend: \$(SRCS)
-	\$(RM) ./.depend
-	\$(CC) \$(CFLAGS) -MM $^>>./.depend;
+.d: \$(SRCS)
+	\$(RM) ./.d
+	\$(CC) \$(CFLAGS) -MM $^>>./.d;
 
 clean:
 	\$(RM) \$(OBJS)
 
 distclean: clean
-	\$(RM) *~ .depend
+	\$(RM) *~ .d
 
-include .depend"
+include .d"
 project=$1
 extension=$2
 path="."
