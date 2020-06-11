@@ -22,7 +22,9 @@ alias \
 	v="$EDITOR"\
 	a="sudo apt"\
 	z="zathura"\
-	cpl="make distclean && make all && make clean"
+	# separated bcs if one doesn't exist, the others will run
+	bld="make distclean && make all && make clean"
+	
 
 # change output if not possible by env
 alias \
