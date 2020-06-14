@@ -2,13 +2,14 @@
 
 # this runs when a DM (gdm, xdm etc) logs you into a graphical session 
 
-# only fix i found such that i don't specify the path for setbg & others
+# only fix I found such that I don't specify the path for setbg & others
 . ~/.zshenv
 
 # mostly daemons
 # mpd &
 transmission-gtk -m & 	# for torrents
 setbg &			# set the background
+xcompmgr &		# for transparency
 dunst &			# for notifications
 # xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/Xresources &
 slstatus &		# status bar

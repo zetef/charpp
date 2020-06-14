@@ -23,6 +23,8 @@ set scrolloff 10
 # see info and size by default
 set info size
 
+# search as you type
+set incsearch on
 
 # customize behavior
 set color256 on
