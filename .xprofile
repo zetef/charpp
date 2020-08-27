@@ -7,11 +7,17 @@
 
 # mostly daemons
 # mpd &
-transmission-gtk -m & 	# for torrents
 setbg &			# set the background
 xcompmgr &		# for transparency
 dunst &			# for notifications
 # xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/Xresources &
 slstatus &		# status bar
+flameshot &		# screenshot app
+nm-applet &		# network manager in system tray
+blueman-applet &	# bluetooth in system tray
+pasystray & 		# sound control in system tray
+redshift-gtk &		# color correction for 1337-late-night-h4x0rr moments
+transmission-gtk -m & 	# for torrents
+# conky -x 0 -y 0 -d	# second status bar
 
 exec dwm

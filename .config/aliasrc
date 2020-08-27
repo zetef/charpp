@@ -34,4 +34,5 @@ alias \
 
 # change to other commands
 alias \
-	lf="lfcd"
+	lf="lfcd"\
+	ss="gnome-screenshot --interactive"

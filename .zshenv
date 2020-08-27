@@ -22,9 +22,15 @@ export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export STACK_ROOT="$XDG_DATA_HOME/stack" # haskell stack
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export GOPATH="$HOME/.local/go"
+export GEM_HOME="$HOME/.local/gems"
+export GEM_SPEC_CACHE="$XDG_CACHE_HOME/gem"
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME/bundle"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
 
 # other env vars
 export PATH="$PATH:$(du $GOPATH/bin | cut -f2 | paste -sd ':')" # bcs go that's why
+export PATH="$PATH:$GEM_HOME/bin"
 
 # change .zshrc location
 [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"

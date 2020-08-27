@@ -35,6 +35,10 @@ set globsearch on
 set hidden on
 # set number on
 
+# previewer
+set previewer ~/.config/lf/pv.sh
+map i $~/.config/lf/pv.sh $f | less -R
+
 
 # use enter for shell commands
 map <enter> shell
@@ -112,4 +116,22 @@ cmd zip ${{
     cp -r $fx $1
     zip -r $1.zip $1
     rm -rf $1
+}}
+
+# paste with progress
+cmd paste &{{
+    load=$(lf -remote 'load')
+    mode=$(echo "$load" | sed -n '1p')
+    list=$(echo "$load" | sed '1d')
+    if [ $mode = 'copy' ]; then
+    rsync -av --ignore-existing --progress $list . \
+    | stdbuf -i0 -o0 -e0 tr '\r' '\n' \
+    | while read line; do
+    lf -remote "send $id echo $line"
+    done
+    elif [ $mode = 'move' ]; then
+    mv -n $list .
+    fi
+    lf -remote 'send load'
+    lf -remote 'send clear'
 }}
