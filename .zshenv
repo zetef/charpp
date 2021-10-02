@@ -31,6 +31,7 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
 # other env vars
 export PATH="$PATH:$(du $GOPATH/bin | cut -f2 | paste -sd ':')" # bcs go that's why
 export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$HOME/.local/src/jdk-11.0.7+10"
 
 # change .zshrc location
 [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"

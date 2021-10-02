@@ -23,7 +23,8 @@ alias \
 	a="sudo apt"\
 	z="zathura"\
 	bld="make distclean && make all && make clean"\
-	am="alsamixer"
+	am="alsamixer"\
+	RCT="python3 ~/.local/src/RsaCtfTool/RsaCtfTool.py"
 	# (bld) separated bcs if one doesn't exist, the others will run
 
 
