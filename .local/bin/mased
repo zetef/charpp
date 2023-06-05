@@ -18,13 +18,13 @@ OBJS=\$(subst .\$(TYPE),.o,\$(SRCS))
 all : \$(PROJECT)
 
 \$(PROJECT): \$(OBJS)
-	\$(CC) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
-	
+	\$(CXX) \$(LDFLAGS) -o \$(PROJECT) \$(OBJS) \$(LDLIBS)
+
 depend: .d
 
 .d: \$(SRCS)
 	\$(RM) ./.d
-	\$(CC) \$(CFLAGS) -MM $^>>./.d;
+	\$(CXX) \$(CFLAGS) -MM $^>>./.d;
 
 clean:
 	\$(RM) \$(OBJS)
@@ -44,7 +44,7 @@ then
 	exit 0
 fi
 
-#if [ "$3" != "" ] 
+#if [ "$3" != "" ]
 #then
 #	path="$3"
 #fi
@@ -60,4 +60,4 @@ mv "$path/Makefile1" "$path/Makefile"
 
 rm makefile.tmp
 
-echo "created Makefile for $project($extension) at $path"
+echo "Created Makefile for $project($extension) at $path"
